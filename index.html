@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTrust Bank</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/auth.css">
+    <link rel="stylesheet" href="styles/navigation.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/cards.css">
+    <link rel="stylesheet" href="styles/transactions.css">
+    <link rel="stylesheet" href="styles/transfers.css">
+    <link rel="stylesheet" href="styles/utilities.css">
+    <link rel="stylesheet" href="styles/account.css">
+    <link rel="stylesheet" href="styles/payments.css">
+</head>
+<body>
+    <header>
+        <h1><span>FinTrust</span> Bank</h1>
+    </header>
+    <div class="loginView">
+        <div class="loginCard">
+            <h2>Welcome Back</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="Enter your password">
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="login-btn">Login</button>
+                </div>
+                <h4 class="error-message">Your email or password is incorrect</h4>
+                <p class="signup-text">Don't have an account? <a id="SignUpLink" href="#">Sign up here</a></p>
+            </form>
+        </div>
+    </div>
+    <div class="signUpView">
+        <div class="loginCard">
+            <h2>Create an Account</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="confirm-email">Confirm Email</label>
+                    <input type="email" id="confirm-email" required placeholder="Confirm your email">
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <div class="password-container">
+                        <input type="password" id="signup-password" required placeholder="Enter your password">
+                        <div id="password-requirements">
+                            <p class="requirement" id="length">At least 8 characters</p>
+                            <p class="requirement" id="uppercase">One uppercase letter</p>
+                            <p class="requirement" id="lowercase">One lowercase letter</p>
+                            <p class="requirement" id="number">One number</p>
+                            <p class="requirement" id="special">One special character</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="signup-btn">Sign Up</button>
+                </div>
+                <p class="signup-text">Already have an account? <a id="loginLink" href="#">Login here</a></p>
+            </form>
+        </div>
+    </div>
+    <div class="homePage">
+        <nav class="main-nav">
+            <div class="nav-links">
+                <div class="nav-left">
+                    <a href="#" class="nav-item" id="accountOverview">Account Overview</a>
+                    <a href="#" class="nav-item" id="transactions">Transactions</a>
+                    <a href="#" class="nav-item" id="transfers">Transfer Money</a>
+                    <a href="#" class="nav-item" id="payments">Payments</a>
+                    <a href="#" class="nav-item" id="cards">My Cards</a>
+                </div>
+                <div class="nav-right">
+                    <div class="account-dropdown">
+                        <div class="account-trigger" id="accountTrigger">
+                            <span class="user-email"></span>
+                            <span>▼</span>
+                        </div>
+                        <div class="account-menu" id="accountMenu">
+                            <div class="account-info">
+                                <div class="user-email"></div>
+                                <div class="user-since"></div>
+                            </div>
+                            <div class="account-menu-item" id="profileSettings">
+                                <span>Profile</span>
+                            </div>
+                            <div class="account-menu-item" id="securitySettings">
+                                <span>Security</span>
+                            </div>
+                            <div class="account-menu-item" id="accountSettings">
+                                <span>Settings</span>
+                            </div>
+                            <div class="account-menu-item warning" id="resetData">
+                                <span>Reset My Data</span>
+                            </div>
+                            <div class="account-menu-item logout" id="logout">
+                                <span>Log out</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main class="content">
+            <div class="dashboard"></div>
+        </main>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="error-popup">
+        <div class="popup-content">
+            Email address is already registered!
+        </div>
+        <button class="popup-close" id="close-popup">Close</button>
+    </div>
+    <script src="scripts/database.js"></script>
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/login.js"></script>
+    <script src="scripts/signup.js"></script>
+    <script src="scripts/accountOverview.js"></script>
+    <script src="scripts/transactions.js"></script>
+    <script src="scripts/transfers.js"></script>
+    <script src="scripts/payments.js"></script>
+    <script src="scripts/cards.js"></script>
+    <script src="scripts/navbar.js"></script>
+</body>
+</html>

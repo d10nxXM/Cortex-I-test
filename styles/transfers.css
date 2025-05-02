@@ -1,0 +1,186 @@
+.transfer-page {
+    max-width: 800px;
+    margin: 0 auto;
+
+
+}
+
+.transfer-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+
+.section-transfer,
+.section-add-funds {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.section-transfer h2,
+.section-add-funds h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.transfer-form,
+.funds-form {
+    margin-top: 1.5rem;
+}
+
+.transfer-input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.transfer-input:focus {
+    border-color: #667eea;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+}
+
+.amount-input-wrapper {
+    position: relative;
+}
+
+.currency-symbol {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.amount-input-wrapper input {
+    padding-left: 2rem;
+}
+
+.transfer-btn {
+    background: #667eea;
+    color: white;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.transfer-btn:hover {
+    background: #764ba2;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+}
+
+.recent-transfers {
+    margin-top: 2rem;
+}
+
+.recent-transfers h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.transfer-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease;
+}
+
+.transfer-item:hover {
+    background: #f8f9fa;
+}
+
+.transfer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.transfer-recipient {
+    font-weight: 500;
+    color: #333;
+}
+
+.transfer-date {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.transfer-amount {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.transfer-amount.credit {
+    color: #28a745;
+}
+
+.transfer-amount.debit {
+    color: #dc3545;
+}
+
+.bank-details-info {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.bank-details-info p {
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+.bank-details-info .note {
+    color: #666;
+    font-style: italic;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    padding-left: 1rem;
+    border-left: 3px solid #ddd;
+}
+
+.payment-details {
+    margin-top: 1rem;
+    padding: 1rem 0;
+}
+
+.saved-card-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.saved-card-option:hover {
+    border-color: #667eea;
+    background: #f8f9fa;
+}
+
+.saved-card-option.selected {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+}
+
+

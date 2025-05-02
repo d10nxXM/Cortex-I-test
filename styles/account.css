@@ -1,0 +1,162 @@
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.account-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.account-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.main-balance {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.main-balance h3 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.main-balance .balance {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 1.5rem 0;
+}
+
+.quick-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.action-btn {
+    padding: 0.8rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.transactions-card {
+    background: white;
+}
+
+.transactions-card h3 {
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.transactions-list {
+    margin: 1rem 0;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease;
+}
+
+.transaction-item:hover {
+    background: #f8f9fa;
+}
+
+.transaction-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.transaction-type {
+    font-weight: 500;
+    color: #333;
+}
+
+.transaction-date {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.transaction-amount {
+    font-weight: bold;
+}
+
+.transaction-amount.credit {
+    color: #28a745;
+}
+
+.transaction-amount.debit {
+    color: #dc3545;
+}
+
+.view-all-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: none;
+    border: 2px solid #667eea;
+    color: #667eea;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.view-all-btn:hover {
+    background: #667eea;
+    color: white;
+}
+
+.summary-card {
+    background: white;
+}
+
+.summary-card h3 {
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.summary-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.summary-item span:first-child {
+    color: #666;
+}
+
+.summary-item span:last-child {
+    font-weight: bold;
+}
+

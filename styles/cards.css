@@ -1,0 +1,344 @@
+.cards-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cards-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.credit-card-wrapper {
+    perspective: 1000px;
+    height: 220px;
+    width: 350px;
+    margin: 1rem;
+}
+
+.credit-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.credit-card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.credit-card-front,
+.credit-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    padding: 2rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.credit-card-front {
+    transform: rotateY(0deg);
+}
+
+.credit-card-back {
+    transform: rotateY(180deg);
+}
+
+.card-chip {
+    width: 60px;
+    height: 45px;
+    background: linear-gradient(145deg, #d4af37, #f4cf47);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card-type {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.card-number {
+    font-size: 1.3rem;
+    letter-spacing: 4px;
+    color: white;
+    margin: 0.5rem 0;
+}
+
+.card-exp {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.card-stripe {
+    background: #000;
+    height: 45px;
+    margin: 20px -24px;
+}
+
+.card-cvv {
+    background: white;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    width: 80%;
+    margin: 20px auto;
+    text-align: right;
+}
+
+.card-actions {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.credit-card:hover .card-actions {
+    opacity: 1;
+}
+
+.delete-btn {
+    background: rgba(220, 53, 69, 0.2);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.delete-btn:hover {
+    background: rgba(220, 53, 69, 0.4);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.card-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.card-modal .modal-content {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+.card-modal h3 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+    padding: 0.5rem;
+}
+
+.edit-card-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.edit-card-modal .modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    animation: slideIn 0.3s ease;
+}
+
+.edit-card-modal .card-preview {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.edit-card-modal .form-group input,
+.edit-card-modal .form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.edit-card-modal .form-group input:focus,
+.edit-card-modal .form-group select:focus {
+    border-color: #667eea;
+    outline: none;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.save-btn, .cancel-btn {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.save-btn {
+    background: #667eea;
+    color: white;
+}
+
+.cancel-btn {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    color: #666;
+}
+
+.no-cards {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+}
+
+.add-card-btn, .add-first-card {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card-preview {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+}
+
+.edit-btn {
+    background: rgba(255, 193, 7, 0.2);  
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    transition: all 0.2s;
+}
+
+.edit-btn:hover {
+    background: rgba(255, 193, 7, 0.4);  
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
